@@ -1,6 +1,6 @@
 const SecondComponent = () => {
     return (
-        <div>Second Component</div>
+        <p>Second component</p>
     )
 }
 export default SecondComponent
