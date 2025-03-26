@@ -1,0 +1,6 @@
+.child{
+    color: red;
+}
+.child:hover{
+    color: white;
+}
