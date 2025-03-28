@@ -11,9 +11,25 @@ const App = () => {
     address: "HaNoi",
     country: "VietNam"
   }
+  // const addNewTodo = (name) => {
+  //   alert(`call me ${name}`)
+  // }
+  const [todoList, setTodoList] = useState([
+    { id: 1, name: "Leaning React" },
+    { id: 2, name: "Watching Youtube" }
+  ])
   const addNewTodo = (name) => {
-    alert(`call me ${name}`)
+    const newTodo = {
+      id:randomIntFromInterval(3, 1000),
+      name:name
+    }
+    setTodoList([...todoList, newTodo])
   }
+
+  const randomIntFromInterval = (min, max) => { // min and max included 
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+
   return (
     <>
         <div className="todo-container">
@@ -25,6 +41,7 @@ const App = () => {
             name = {horashiDev}
             age = {age}
             data = {data}
+            todoList = {todoList}
           />
           <div className="todo-image">
             <img src={reactLogo} alt="" />
