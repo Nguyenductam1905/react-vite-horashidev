@@ -1,7 +1,7 @@
 import './todo.css'
 
 const TodoData = (props) => {
-    const {name, age, data, todoList} = props
+    const {name, age, data, todoList, deleteTasks} = props
     console.log(">>>Check props", props)
     console.log(">>>Check list", todoList)
 
@@ -12,7 +12,7 @@ const TodoData = (props) => {
             return (
                   <div key={item.id} className={`todo-item ${index}`} >
                     <div>{item.name}</div>
-                    <button>Delete</button>
+                    <button onClick={() => deleteTasks(item.id)} style={{cursor:"pointer"}}>Delete</button>
                   </div>)
           })}
           {/* {JSON.stringify(props.todoList)} */}

@@ -17,7 +17,7 @@ const TodoNew = (props) => {
   return (
     <div className='todo-new'>
       <input type="text"
-        onChange={() => {
+        onChange={(event) => {
           handleOnChange(event.target.value);
         }}
         value={valueInput}

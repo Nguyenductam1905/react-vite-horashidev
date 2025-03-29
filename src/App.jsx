@@ -15,8 +15,8 @@ const App = () => {
   //   alert(`call me ${name}`)
   // }
   const [todoList, setTodoList] = useState([
-    { id: 1, name: "Leaning React" },
-    { id: 2, name: "Watching Youtube" }
+    // { id: 1, name: "Leaning React" },
+    // { id: 2, name: "Watching Youtube" }
   ])
   const addNewTodo = (name) => {
     const newTodo = {
@@ -25,7 +25,9 @@ const App = () => {
     }
     setTodoList([...todoList, newTodo])
   }
-
+  const deleteTasks = (taskDelete) => {
+    setTodoList(todoList.filter((list) => list.id !== taskDelete))
+  }
   const randomIntFromInterval = (min, max) => { // min and max included 
     return Math.floor(Math.random() * (max - min + 1) + min);
   }
@@ -37,15 +39,34 @@ const App = () => {
           <TodoNew
            addNewTodo = {addNewTodo}
           />
-          <TodoData
-            name = {horashiDev}
-            age = {age}
-            data = {data}
+          {/* {
+            todoList.length > 0 &&
+            <TodoData
+            // name = {horashiDev}
+            // age = {age}
+            // data = {data}
             todoList = {todoList}
           />
+          }
+          {todoList.length === 0 &&
+            <div className="todo-image">
+              <img src={reactLogo} alt="" />
+            </div>
+          } */}
+          {
+            todoList.length > 0 ?
+            <TodoData
+            // name = {horashiDev}
+            // age = {age}
+            // data = {data}
+            todoList = {todoList}
+            deleteTasks = {deleteTasks}
+          />
+          :
           <div className="todo-image">
-            <img src={reactLogo} alt="" />
-          </div>
+              <img src={reactLogo} alt="" />
+            </div>
+          }
         </div>
     </>
   )
