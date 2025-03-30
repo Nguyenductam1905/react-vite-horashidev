@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import TodoNew from './components/todo/TodoNew'
 import TodoData from './components/todo/TodoData'
+import Header from './layout/header'
+import Footer from './layout/footer'
 const App = () => {
   const horashiDev = "DucTam HorashiDev";
   const age = 25;
@@ -34,6 +36,7 @@ const App = () => {
 
   return (
     <>
+        <Header/>
         <div className="todo-container">
           <div className='todo-title'>Todo List</div>
           <TodoNew
@@ -68,6 +71,7 @@ const App = () => {
             </div>
           }
         </div>
+        <Footer/>
     </>
   )
 }
