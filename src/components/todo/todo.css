@@ -1,4 +1,29 @@
-.todo-item{
+.todo-container{
+    margin: 50px auto;
+    width: 600px;
+  }
+  .todo-title{
+    font-size: 35px;
+    margin: 15px 0;
+    color: orange;
+    text-align: center;
+    font-weight: 600;
+  }
+  .todo-new{
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+  .todo-data{
+    display: flex;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    flex-direction: column;
+    gap: 15px;
+  }
+  .todo-item{
     display: flex;
     justify-content: space-between;
   }
